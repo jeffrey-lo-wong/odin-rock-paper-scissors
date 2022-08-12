@@ -10,7 +10,7 @@
 
       let playerSelection = sign.toLowerCase(); // brings to lowercase
 
-      console.log(playerSelection); 
+      console.log("You chose " + playerSelection); 
 
       let playerChoice = 0;
 
@@ -28,68 +28,58 @@
       }
 
       console.log("This is the player's choice: " + playerChoice);
-
+    
       let computerResult = Math.floor((Math.random() * 3) + 1); // randomize choice from computer
-
       getComputerChoice(computerResult);
+      console.log("This is the computer's selection: " + computerResult);
 
-      function getComputerChoice(computerResult) {
-        let computerSelection = 0;
 
-        if (computerResult === 1) {
+      function getComputerChoice(computerChoice) {
+
+        if (computerChoice === 1) {
             console.log("Computer threw rock");
-            computerSelection = 1;
-          } else if (computerResult === 2) {
+          } else if (computerChoice === 2) {
             console.log("Computer threw paper");
-            computerSelection = 2;
-          } else {
+          } else if (computerChoice === 3) {
             console.log("Computer threw scissors");
-            computerSelection = 3;
           } 
-
-          return computerSelection;
       }
 
-      console.log("This is the computer's selection " + getComputerChoice());
-
-
-  /*  for (let i = 0; i <5; i++) {
-      function playRound(playerSelection, computerSelection) {
-        if (playerSelection === computerSelection) {
+      function playRound(playerSelection, computerResult) {
+        if (playerSelection === computerResult) {
           console.log("Tie")
         }
 
-        else if (playerSelection === 2 && computerSelection === 3) {
+        else if (playerSelection === 2 && computerResult === 3) {
           console.log("scissors beat paper");
           console.log("computer wins");
         }
 
-        else if (playerSelection === 3 && computerSelection === 1) {
+        else if (playerSelection === 3 && computerResult === 1) {
           console.log("rock beats scissors");
           console.log("computer wins");
         }
 
-        else if (playerSelection === 1 && computerSelection === 2) {
+        else if (playerSelection === 1 && computerResult === 2) {
           console.log("paper beats rock");
           console.log("computer wins");
         }
 
-        else if (playerSelection === 1 && computerSelection === 3) {
+        else if (playerSelection === 1 && computerResult === 3) {
           console.log("rock beats scissors");
           console.log("computer wins");
         }
 
-        else if (playerSelection === 2 && computerSelection === 1) {
+        else if (playerSelection === 2 && computerResult === 1) {
           console.log("rock beats paper");
           console.log("computer wins");
         }
 
-        else if (playerSelection === 3 && computerSelection === 2) {
+        else if (playerSelection === 3 && computerResult === 2) {
           console.log("scissors beats paper");
           console.log("computer wins");
         }
       }
-    } */
 
     </script>
   </head>
