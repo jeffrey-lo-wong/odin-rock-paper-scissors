@@ -12,7 +12,6 @@
 
       function game(computerScore, userScore) {
         for (let i = 0; i < 5; i++) {
-
           let sign = prompt("Rock, paper or scissors?"); //prompts rock, paper or scissors 
 
           let playerSelection = sign.toLowerCase(); // brings to lowercase
@@ -45,7 +44,7 @@
                 console.log("Computer threw scissors");
               } 
           }
-
+          console.log("This is the loop iteration: " + i);
           playRound(player(playerSelection), computerResult);
 
           function playRound(playerSelection, computerResult) {
@@ -89,8 +88,8 @@
               userScore++;
             }
 
-            if (i === 5) {
-              console.log("User score is: " + userScore + " | Computer score is: " + computerScore)
+            if (i === 4) {
+              console.log("User score is: " + userScore + " | Computer score is: " + computerScore + " | There were " + (i + 1) + " rounds");
                 if (userScore < computerScore) {
                   console.log("You lose, computer wins the game!"); 
                 } else if (userScore > computerScore) {
