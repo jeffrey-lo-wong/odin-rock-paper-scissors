@@ -14,7 +14,7 @@
 
       let playerChoice = 0;
 
-      player(playerSelection);
+      console.log(player(playerSelection)); // displays choice
 
       function player (playerSelection) {
         if (playerSelection === "rock") {
@@ -25,6 +25,7 @@
           playerChoice = 3;
         }
 
+        return playerChoice;
       }
 
       console.log("This is the player's choice: " + playerChoice);
@@ -44,6 +45,8 @@
             console.log("Computer threw scissors");
           } 
       }
+
+      playRound(player(playerSelection), computerResult);
 
       function playRound(playerSelection, computerResult) {
         if (playerSelection === computerResult) {
