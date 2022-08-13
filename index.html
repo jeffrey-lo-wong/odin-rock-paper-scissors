@@ -11,6 +11,7 @@
       game(computerScore, userScore);
 
       function game(computerScore, userScore) {
+        
         for (let i = 0; i < 5; i++) {
           let sign = prompt("Rock, paper or scissors?"); //prompts rock, paper or scissors 
 
@@ -44,7 +45,7 @@
                 console.log("Computer threw scissors");
               } 
           }
-          console.log("This is the loop iteration: " + i);
+  
           playRound(player(playerSelection), computerResult);
 
           function playRound(playerSelection, computerResult) {
@@ -87,6 +88,8 @@
               console.log("You win!");
               userScore++;
             }
+
+            console.log("This is the round " + i);
 
             if (i === 4) {
               console.log("User score is: " + userScore + " | Computer score is: " + computerScore + " | There were " + (i + 1) + " rounds");
