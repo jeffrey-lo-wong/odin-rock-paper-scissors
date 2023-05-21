@@ -4,107 +4,14 @@
   <head>
     <meta charset="UTF-8">
     <title>rock-paper-scissors</title>
-    <script>
-
-      let computerScore = 0;
-      let userScore = 0;
-      game(computerScore, userScore);
-
-      function game(computerScore, userScore) {
-        
-        for (let i = 0; i < 5; i++) {
-          let sign = prompt("Rock, paper or scissors?"); //prompts rock, paper or scissors 
-
-          let playerSelection = sign.toLowerCase(); // brings to lowercase
-
-          console.log("You threw " + playerSelection); 
-
-          let playerChoice = 0;
-
-          function player (playerSelection) {
-            if (playerSelection === "rock") {
-              playerChoice = 1;
-            } else if (playerSelection === "paper") {
-              playerChoice = 2;
-            } else if (playerSelection === "scissors") {
-              playerChoice = 3;
-            }
-            return playerChoice;
-          }
-        
-          let computerResult = Math.floor((Math.random() * 3) + 1); // randomize choice from computer
-          getComputerChoice(computerResult);
-
-          function getComputerChoice(computerChoice) {
-
-            if (computerChoice === 1) {
-                console.log("Computer threw rock");
-              } else if (computerChoice === 2) {
-                console.log("Computer threw paper");
-              } else if (computerChoice === 3) {
-                console.log("Computer threw scissors");
-              } 
-          }
-  
-          playRound(player(playerSelection), computerResult);
-
-          function playRound(playerSelection, computerResult) {
-            if (playerSelection === computerResult) {
-              console.log("Tie")
-            }
-
-            else if (playerSelection === 2 && computerResult === 3) {
-              console.log("Scissors beat paper");
-              console.log("Computer wins!");
-              computerScore++; 
-            }
-
-            else if (playerSelection === 3 && computerResult === 1) {
-              console.log("Rock beats scissors");
-              console.log("Computer wins!");
-              computerScore++; 
-            }
-
-            else if (playerSelection === 1 && computerResult === 2) {
-              console.log("paper beats rock");
-              console.log("Computer wins!");
-              computerScore++; 
-            }
-
-            else if (playerSelection === 1 && computerResult === 3) {
-              console.log("Rock beats scissors");
-              console.log("You win!");
-              userScore++;
-            }
-
-            else if (playerSelection === 2 && computerResult === 1) {
-              console.log("Paper beats rock");
-              console.log("You win!");
-              userScore++;
-            }
-
-            else if (playerSelection === 3 && computerResult === 2) {
-              console.log("Scissors beats paper");
-              console.log("You win!");
-              userScore++;
-            }
-
-            console.log("Round " + i + " has ended.");
-
-            if (i === 4) {
-              console.log("User score is: " + userScore + " | Computer score is: " + computerScore + " | There were " + (i + 1) + " rounds");
-                if (userScore < computerScore) {
-                  console.log("You lose, computer wins the game!"); 
-                } else if (userScore > computerScore) {
-                  console.log("Computer loses, You win the game!");
-                } else if (userScore === computerScore) {
-                  console.log("It is a tie, nobody wins.");
-                }
-            }
-          }
-        }
-      }
-    </script>
+    <script src="script.js" defer></script>
   </head>
+  <body>
+    <button id="rock-btn">Rock</button>
+    <button id="paper-btn">Paper</button>
+    <button id="scissors-btn">Scissors</button>
 
+    <div id="results">
+    </div>
+  </body>
 </html>
